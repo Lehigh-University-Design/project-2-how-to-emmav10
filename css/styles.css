@@ -3,19 +3,161 @@
 /* Global variables */
 
 :root {
-    
+background-color: #041118;
+--dark-color: #204E60;
+--link-color: #A1D0BE;
+--light-color: #05AA9A;
+--lightest-color: #E5D9AB;
+--darker-color: #8E2F2A;
 }
 
 /* Main styles */
 
 body {
-
+font-family: "fagun", sans-serif; 
+font-style: normal;
+color: var(--lightest-color); 
 }
 
 h1 {
+font-family: "cofo raffine", serif;
+font-style: normal;
+font-weight: bold; 
+color: var(--link-color)
+}
 
+h2 {
+font-family: "cofo raffine", serif;
+font-style: normal;
+font-weight: bold;
+font-size: 200px;
+color: var(--light-color);
+}
+
+h3 {
+font-family: "fagun", sans-serif;
+font-weight: medium;
+font-size: 20px;
+color: var(--link-color);
+}
+
+h4 {
+font-family: "fagun", sans-serif;
+font-weight: regular;
+font-size: 48px;
+color: var(--light-color);
+}
+
+.special-headline {
+font-family: "cofo raffine", serif;
+font-style: normal;
+font-weight: bold;
+font-size: 40px;
+color: var(--lightest-color);
 }
 
 p {
+font-family: "fagun", sans-serif; 
+font-style: normal;
+color: var(--lightest-color); 
+}
 
+.header {
+background-color: var(--dark-color);
+display: flex;
+justify-content: space-between;
+padding: .75em 1rem;
+/* stretch the header background to the full viewport width while keeping
+  the header's content layout inside the centered main column */
+position: relative;
+width: 100vw;
+left: 50%;
+right: 50%;
+margin-left: -50vw;
+margin-right: -50vw;
+box-sizing: border-box;
+}
+
+main {
+  position: relative;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.post {
+  padding: .5em 1em;
+  img {
+    width: 60%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  a {
+  color: var(--link-color);
+  text-decoration: none;
+  padding: .2em .5em;
+  }
+  a:hover {
+    background-color: var(--hover-color);
+  }
+}
+
+.grid-assign-parent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.grid-assign-child {
+  min-height: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-assign-special-child {
+  grid-row: 2 / 4; /*start at row 2 and go to row 4 */
+  grid-column: 2 / 4; /*start at column 2 and go to column 4 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.25rem;
+}
+
+/* remove default heading margins so centering is exact */
+.grid-assign-special-child h2,
+.grid-assign-special-child h4 {
+  margin: 0;
+}
+
+/* Help from chat thank you */
+/* Make every grid cell center its content (or apply to a specific grid container) */
+.grid-container {
+  display: grid;
+  place-items: center; /* shorthand for align-items + justify-items */
+  /* ...your existing grid rules... */
+}
+
+/* or for a single grid child */
+.grid-child {
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+}
+
+.flex-container-justify {
+display: flex;
+justify-content: center;
+flex-wrap: nowrap;
+}
+
+.flex-item {
+width: 25%;
+columns: 3;
+margin: 1em;
+padding: 1em;
 }
