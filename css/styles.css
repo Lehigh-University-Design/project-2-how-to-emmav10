@@ -24,6 +24,7 @@ h1 {
 font-family: "cofo raffine", serif;
 font-style: normal;
 font-weight: bold; 
+font-size: 30px;
 color: var(--link-color)
 }
 
@@ -55,11 +56,14 @@ font-style: normal;
 font-weight: bold;
 font-size: 40px;
 color: var(--lightest-color);
+align-content: center;
+text-align: center;
 }
 
 p {
 font-family: "fagun", sans-serif; 
 font-style: normal;
+font-size: 14px;
 color: var(--lightest-color); 
 }
 
@@ -67,6 +71,7 @@ color: var(--lightest-color);
 background-color: var(--dark-color);
 position: sticky;
 top: 0;
+z-index: 10;
 box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
@@ -83,26 +88,26 @@ box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 
 main {
   position: relative;
-  max-width: 1080px;
-  margin: 0 auto;
 }
 
-.post {
+.content-wrapper {
+    max-width: 1080px; /* Keep your desired content width */
+    margin: 0 auto;    /* Center the content */
+    padding: 2em 1em;  /* Add the padding here instead of on .post/#post */
+}
+
+.dark-section {
+  background: var(--background-color, #041118);
   padding: .5em 1em;
-  img {
-    width: 60%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-  a {
-  color: var(--link-color);
-  text-decoration: none;
-  padding: .2em .5em;
-  }
-  a:hover {
-    background-color: var(--hover-color);
-  }
+  width: 100%;
+  box-sizing: border-box; 
+}
+
+.light-section {
+  background-color: var(--dark-color);
+  padding: .5em 1em;
+  width: 100%;
+  box-sizing: border-box; 
 }
 
 .grid-assign-parent {
