@@ -65,6 +65,9 @@ color: var(--lightest-color);
 
 .header {
 background-color: var(--dark-color);
+position: sticky;
+top: 0;
+box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 .nav-holder {
