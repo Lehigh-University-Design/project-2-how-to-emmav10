@@ -17,6 +17,7 @@ body {
 font-family: "fagun", sans-serif; 
 font-style: normal;
 color: var(--lightest-color); 
+margin: 0;
 }
 
 h1 {
@@ -64,18 +65,17 @@ color: var(--lightest-color);
 
 .header {
 background-color: var(--dark-color);
-display: flex;
-justify-content: space-between;
-padding: .75em 1rem;
-/* stretch the header background to the full viewport width while keeping
-  the header's content layout inside the centered main column */
-position: relative;
-width: 100vw;
-left: 50%;
-right: 50%;
-margin-left: -50vw;
-margin-right: -50vw;
-box-sizing: border-box;
+}
+
+.nav-holder {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .75em 1rem;
+  position: relative;
+  box-sizing: border-box;
 }
 
 main {
