@@ -121,8 +121,8 @@ main {
 
 .grid-assign-parent {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
   gap: 1em;
   margin-bottom: 1em;
 }
@@ -132,6 +132,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: var(--darker-color);
 }
 
 .grid-assign-special-child {
@@ -204,4 +205,26 @@ html {
 .nav-holder a:hover .special-headline,
 .nav-holder a:focus .special-headline {
   color: var(--light-color);
+}
+
+.flex-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.flex-card {
+  display: flex;
+  width: calc(100%/2);
+  gap: 3 em;
+  justify-content: center;
+}
+
+.flex-card-inner {
+  margin: 1em;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0.25rem;
 }
