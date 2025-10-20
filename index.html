@@ -30,33 +30,13 @@
     <main>
         <br>
         <br>
-        <div class="grid-container">
-            <div class="grid-assign-parent">
-                <div class="grid-assign-child" img src="./card-deck/card-back.png"></div>
-                <div class="grid-assign-child" img src="./card-deck/card-back.png"></div>
-                <div class="grid-assign-child" img src="./card-deck/card-back.png"></div>
-                <div class="grid-assign-child"></div>
-                <div class="grid-assign-special-child">
-                    <h4>How To Play</h4>
-                    <h2>SPIT</h2>
-                </div>
-                <div class="grid-assign-child"></div>
-                <div class="grid-assign-child"></div>
-                <div class="grid-assign-child"></div>
-                <div class="grid-assign-child"></div>
-                <div class="grid-assign-child"></div>
-                <div class="grid-assign-child"></div>
-                <div class="grid-assign-child"></div>
-                <div class="grid-assign-child"></div>
-                <div class="grid-assign-child"></div>
-                <div class="grid-assign-child"></div>
-                <div class="grid-assign-child"></div>
-                <div class="grid-assign-child"></div>
-                <div class="grid-assign-child"></div>
-                <div class="grid-assign-child"></div>
-                <div class="grid-assign-child"></div>
-                <div class="grid-assign-child"></div>
-                <div class="grid-assign-child"></div>
+        <div class="grid-assign-special-child">
+            <video id="background-video" class="play-on-scroll" playsinline muted preload="metadata" loop data-play-once="false">
+                <source src="./card-deck/beginning-animation.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay-text">
+                <h4>How To Play</h4>
+                <h2>SPIT</h2>
             </div>
         </div>
         
@@ -98,11 +78,13 @@
 
         <section id="objective" class="light-section">
             <section class="content-wrapper">
-                <h1>Objective</h1>
-                <p>Get rid of all of your cards and land your opponent with the whole deck.</p>
-                <p>Play as many rounds as necessary to make this happen.
-            </section>
-            <div><img src="./card-deck/card-shuffle.gif"></div>
+            <div class="grid-area-parent">
+                <div class="grid-area-child area-sidebar"><h1>Objective</h1>
+                    <p>Get rid of all of your cards and land your opponent with the whole deck.</p>
+                    <p>Play as many rounds as necessary to make this happen.</p></div>
+                <div class="grid-area-child area-main"><div><img src="./card-deck/card-shuffle.gif" width="200px"></div>
+            </div>
+        </section>
         </section>
 
         <section id="set-up" class="dark-section">
@@ -138,6 +120,8 @@
                 <p>The winning player will have no draw pile, no set-up, and no center pile to take in.</p> 
             </section>
         </section>
+
+        
 
         <footer>
             <section id="post">

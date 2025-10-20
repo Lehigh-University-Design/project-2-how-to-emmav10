@@ -121,8 +121,8 @@ main {
 
 .grid-assign-parent {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   gap: 1em;
   margin-bottom: 1em;
 }
@@ -132,10 +132,11 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--darker-color);
+  background-color: var(--background-color);
 }
 
 .grid-assign-special-child {
+  position: relative;
   grid-row: 2 / 4; /*start at row 2 and go to row 4 */
   grid-column: 2 / 4; /*start at column 2 and go to column 4 */
   display: flex;
@@ -178,6 +179,56 @@ width: 25%;
 columns: 3;
 margin: 1em;
 padding: 1em;
+}
+
+/* Center GIFs inside the flex-grid area and make them responsive */
+.flex-grid {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-card {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between; /* push images to opposite sides of the container */
+  align-items: center;
+  flex-wrap: nowrap;
+  /* center the container itself so the midpoint between images is at page center */
+  width: min(900px, 70vw);
+  margin: 0 auto;
+}
+
+.flex-card-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-card-inner img {
+  display: block;
+  max-width: 420px; /* limit each gif width so they sit clearly left/right of center */
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Center any single images placed directly inside a section (like card-shuffle.gif) */
+section > div > img {
+  display: block;
+  margin: 1rem auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive: stack the GIFs vertically on small screens */
+@media (max-width: 700px) {
+  .flex-card {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: auto;
+  }
+  .flex-card-inner img {
+    max-width: 80vw;
+  }
 }
 
 html {
@@ -227,4 +278,52 @@ html {
   flex-direction: row;
   justify-content: space-between;
   gap: 0.25rem;
+}
+
+.video-overlay-text {
+  position: relative; /* Make sure the text respects z-index */
+  z-index: 2; /* Higher z-index than the video (z-index: 1) */
+  /* This wrapper inherits the flex properties from .grid-assign-special-child */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video covers the entire container without stretching */
+  z-index: 1; /* Place the video layer *under* the text */
+  pointer-events: none;
+}
+
+.grid-area-parent {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  gap: 1em;
+  margin-bottom: 1em;
+  grid-template-areas:
+    'header header'
+    'sidebar main'
+    'footer footer';
+    /* notice how it looks like the grid, visually */
+}
+
+.area-header {
+  grid-area: header;
+}
+
+.area-sidebar {
+  grid-area: sidebar;
+}
+
+.area-main {
+  grid-area: main;
+}
+
+.area-footer {
+  grid-area: footer;
 }
