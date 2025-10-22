@@ -211,6 +211,15 @@ padding: 1em;
   margin: 0 auto;
 }
 
+/* Hand videos: size and cursor */
+.flex-card-inner video {
+  max-width: 420px;
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+}
+
 /* Center any single images placed directly inside a section (like card-shuffle.gif) */
 section > div > img {
   display: block;

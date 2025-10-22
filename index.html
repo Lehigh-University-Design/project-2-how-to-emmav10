@@ -14,8 +14,7 @@
 
 </head>
 
-<body>
-    <body id="top"></body>
+<body id="top">
 
     <div class="header">
             <div class="nav-holder">
@@ -30,7 +29,7 @@
     <main>
         <br>
         <br>
-        <div class="grid-assign-special-child">
+        <section class="grid-assign-special-child">
             <video id="background-video" class="play-on-scroll" playsinline muted preload="metadata" loop data-play-once="false">
                 <source src="./card-deck/beginning-animation.mp4" type="video/mp4">
             </video>
@@ -38,7 +37,7 @@
                 <h4>How To Play</h4>
                 <h2>SPIT</h2>
             </div>
-        </div>
+        </section>
         
         <section id="get-ready" class="dark-section">
             <section class="content-wrapper">
@@ -47,29 +46,17 @@
             <p>You may be thinking, "isn’t this a card game?”</p>
             <p>Yes. Yes it is.</p>
 
-            <section class="grid-container">
-                <div class="grid-assign-parent">
-                    <div class="grid-assign-child"></div>
-                    <div class="grid-assign-child"></div>
-                    <div class="grid-assign-child"></div>
-                    <div class="grid-assign-child"></div>
-                    <div class="grid-assign-child"></div>
-                    <div class="grid-assign-child"></div>
-                    <div class="grid-assign-child"></div>
-                    <div class="grid-assign-child"></div>
-                    <div class="grid-assign-child"></div>
-                    <div class="grid-assign-child"></div>
-                    <div class="grid-assign-child"></div>
-                </div>
-            </section>
-
             <div class="flex-grid">
                 <div class="flex-card"> 
                     <div class="flex-card-inner">
-                        <div><img src="./card-deck/hand-slide-in-left.gif"></div>
+                        <div>
+                            <video src="./card-deck/hand-slide-in_1.mp4" muted playsinline preload="metadata"></video>
+                        </div>
                     </div>
                     <div class="flex-card-inner">
-                        <div><img src="./card-deck/hand-slide-in-right.gif"></div>
+                        <div>
+                            <video src="./card-deck/hand-slide-in_2.mp4" muted playsinline preload="metadata"></video>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -82,7 +69,11 @@
                 <div class="grid-area-child area-sidebar"><h1>Objective</h1>
                     <p>Get rid of all of your cards and land your opponent with the whole deck.</p>
                     <p>Play as many rounds as necessary to make this happen.</p></div>
-                <div class="grid-area-child area-main"><div><img src="./card-deck/card-shuffle.gif" width="200px"></div>
+                <div class="grid-area-child area-main">
+                    <div>
+                        <video class="hover-play" src="./card-deck/card-shuffle.mp4" width="200" muted playsinline preload="metadata"></video>
+                    </div>
+                </div>
             </div>
         </section>
         </section>
@@ -96,7 +87,7 @@
             your bare pile.</p>
                 <p>Your opponent will have the same setup.</p>
                 <p>Put excess cards between players in an individual draw pile to each player’s right. This will be used throughout the game</p>
-
+                <img src="./card-deck/player-1-set-up.png" width="1080px">
             </section>
         </section>
 
