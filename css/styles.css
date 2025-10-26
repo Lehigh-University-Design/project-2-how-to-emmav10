@@ -145,6 +145,9 @@ main {
   justify-content: center;
   text-align: center;
   gap: 0.25rem;
+  overflow: hidden; /* clip video to the cell */
+  /* full-ish viewport height minus header (adjust 80px to match your header) */
+  min-height: calc(100vh - 80px);
 }
 
 /* remove default heading margins so centering is exact */
@@ -206,14 +209,14 @@ padding: 1em;
 
 .flex-card-inner img {
   display: block;
-  max-width: 420px; /* limit each gif width so they sit clearly left/right of center */
+  max-width: 600px; /* limit each gif width so they sit clearly left/right of center */
   height: auto;
   margin: 0 auto;
 }
 
 /* Hand videos: size and cursor */
 .flex-card-inner video {
-  max-width: 420px;
+  max-width: 600px;
   width: 100%;
   height: auto;
   display: block;
@@ -242,7 +245,7 @@ section > div > img {
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: Var(--header-height, 80px);
+  scroll-padding-top: var(--header-height, 80px);
 }
 
 /* base colors for nav links (ensure headings inside anchors inherit this) */
@@ -323,10 +326,12 @@ html {
 
 .area-header {
   grid-area: header;
+  justify-content: right;
 }
 
 .area-sidebar {
   grid-area: sidebar;
+  min-width: 800px;
 }
 
 .area-main {

@@ -34,4 +34,39 @@ document.addEventListener('DOMContentLoaded', () => {
 			}
 		});
 	});
+
+	// Play/pause videos when they scroll into view (for background/hero video)
+	// Targets <video class="play-on-scroll"> elements
+	const scrollVideos = document.querySelectorAll('video.play-on-scroll');
+	if (scrollVideos.length) {
+		const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+		const options = { root: null, rootMargin: '0px 0px -20% 0px', threshold: 0.5 };
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				const vid = entry.target;
+				if (prefersReduced) return; // respect user preference
+				if (entry.isIntersecting) {
+					vid.muted = true; // ensure muted so browsers allow play
+					// If the video is marked to play once, play then stop observing so it doesn't replay
+					if (vid.dataset.playOnce === 'true') {
+						vid.play().catch(() => {});
+						observer.unobserve(vid);
+					} else {
+						vid.play().catch(() => {});
+					}
+				} else {
+					// Only pause if the video is not set to play once (otherwise it was unobserved)
+					if (vid.dataset.playOnce !== 'true') {
+						vid.pause();
+					}
+				}
+			});
+		}, options);
+
+		scrollVideos.forEach(v => {
+			v.preload = 'metadata';
+			v.muted = true;
+			observer.observe(v);
+		});
+	}
 });
